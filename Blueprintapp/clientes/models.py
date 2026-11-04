@@ -1,3 +1,4 @@
+#clientes
 from Blueprintapp.app import db
 
 class Cliente(db.Model):

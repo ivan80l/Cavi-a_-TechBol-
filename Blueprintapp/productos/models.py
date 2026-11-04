@@ -1,3 +1,4 @@
+#productos
 from Blueprintapp.app import db
 
 class Producto(db.Model):

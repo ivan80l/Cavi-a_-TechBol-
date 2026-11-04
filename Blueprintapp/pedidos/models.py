@@ -1,3 +1,4 @@
+#pedidos
 from Blueprintapp.app import db
 
 class Pedido(db.Model):
