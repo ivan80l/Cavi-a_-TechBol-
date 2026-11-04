@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Modificar producto</h1>
+
+<form method="POST">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" value="{{ producto.nombre }}" required>
+
+    <br><br>
+
+    <label>Precio:</label>
+    <input type="number" name="precio" step="0.01" min="0" value="{{ producto.precio }}" required>
+
+    <br><br>
+
+    <label>Stock:</label>
+    <input type="number" name="stock" min="0" value="{{ producto.stock }}" required>
+
+    <br><br>
+
+    <button type="submit">Actualizar</button>
+</form>
+
+{% endblock %}

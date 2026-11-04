@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Registrar cliente</h1>
+
+<form method="POST">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <br><br>
+
+    <label>Teléfono:</label>
+    <input type="text" name="telefono" required>
+
+    <br><br>
+
+    <button type="submit">Guardar</button>
+</form>
+
+{% endblock %}

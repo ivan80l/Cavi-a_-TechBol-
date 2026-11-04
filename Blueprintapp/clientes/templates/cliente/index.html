@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <h1>Lista de clientes</h1>
+<a href="{{ url_for('clientes.create') }}">Registrar cliente</a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for cliente in clientes %}
+    <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td>
+            <a href="{{ url_for('clientes.edit', id=cliente.id) }}">Editar</a>
+
+            <form action="{{ url_for('clientes.delete', id=cliente.id) }}" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
+        </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4">No hay clientes registrados.</td></tr>
+    {% endfor %}
+</table>
 
 {% endblock %}

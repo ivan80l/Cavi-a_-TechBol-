@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Modificar pedido</h1>
+
+<form method="POST">
+    <label>Fecha:</label>
+    <input type="date" name="fecha" value="{{ pedido.fecha.isoformat() }}" required>
+
+    <br><br>
+
+    <label>Monto:</label>
+    <input type="number" name="monto" step="0.01" min="0" value="{{ pedido.monto }}" required>
+
+    <br><br>
+
+    <label>Cliente:</label>
+    <select name="cliente_id" required>
+        {% for cliente in clientes %}
+        <option value="{{ cliente.id }}" {% if cliente.id == pedido.cliente_id %}selected{% endif %}>
+            {{ cliente.nombre }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <label>Producto:</label>
+    <select name="producto_id" required>
+        {% for producto in productos %}
+        <option value="{{ producto.id }}" {% if producto.id == pedido.producto_id %}selected{% endif %}>
+            {{ producto.nombre }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button type="submit">Actualizar</button>
+</form>
+
+{% endblock %}
