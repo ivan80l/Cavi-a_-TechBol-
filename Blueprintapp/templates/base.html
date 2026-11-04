@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema TechBol</title>
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Gestión TechBol</h1>
+    </header>
+
+    <nav>
+        <a href="{{ url_for('core.index') }}">Inicio</a>
+        <a href="{{ url_for('clientes.index') }}">Clientes</a>
+        <a href="{{ url_for('productos.index') }}">Productos</a>
+        <a href="{{ url_for('pedidos.index') }}">Pedidos</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

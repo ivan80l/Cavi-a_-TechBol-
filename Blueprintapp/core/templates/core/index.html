@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Bienvenido al Sistema de Gestión TechBol</h1>
+
+    <p>Seleccione el módulo al que desea ingresar:</p>
+
+    <ul>
+        <li>
+            <a href="{{ url_for('clientes.index') }}">Clientes</a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('productos.index') }}">Productos</a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('pedidos.index') }}">Pedidos</a>
+        </li>
+    </ul>
+
+{% endblock %}
